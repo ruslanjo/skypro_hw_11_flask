@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from task_2.utils import load_candidates_from_json, get_candidate_by_id, get_candidates_by_name, get_candidates_by_skill
+from utils import load_candidates_from_json, get_candidate_by_id, get_candidates_by_name, get_candidates_by_skill
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def candidate_page(candidate_id):
     return render_template('candidate_card.html', candidate=candidate)
 
 
-@app.route('/candidate/<candidate_name>')
+@app.route('/search/<candidate_name>')
 def show_candidates_with_matching_name(candidate_name):
     candidates = load_candidates_from_json('candidates.json')
     matching_candidates = get_candidates_by_name(candidate_name, candidates)

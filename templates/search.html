@@ -6,9 +6,8 @@
 </head>
 <body>
 <h1>Найдено кандидатов: {{candidates_count}}</h1>
-{ % for candidate in candidates_found %}
-<p><a href="/candidate/{{candidate.id}}">{{candidate.name}}</a></p>
+{% for candidate in candidates_found %}
+    <p><a href="/candidate/{{candidate.id}}">{{candidate.name}}</a></p>
 {% endfor %}
-<p><a href="" </p>
 </body>
 </html>
